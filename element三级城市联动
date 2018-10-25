@@ -1,0 +1,28 @@
+HMTL:
+
+<div class="block">
+      <span class="demonstration">国家/省份/城市/地区</span>
+      <el-cascader
+        :options="options"
+        v-model="selectedOptions"
+        @change="handleChange"
+        :separator="' '"
+      >
+      </el-cascader>
+</div>
+
+
+// vue中的JS，从外面引入数据到options
+
+import options from 'country-data.js'
+
+data(){
+      return{
+        selectedOptions: [],//存放默认值
+        options:options   //存放城市数据
+}
+methods:{
+  handleChange(value) {
+        console.log(value);
+      }
+}
